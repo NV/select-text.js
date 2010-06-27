@@ -1,0 +1,22 @@
+# select-text.js
+Makes text selection a little less horrible. It's about [Selection](https://developer.mozilla.org/en/DOM/Selection) and [Ranges](http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html).
+
+## Example
+
+    <div id="quote">
+    I'm <em>Zaphod Beeblebrox</em>, my father was <em>Zaphod Beeblebrox</em> the <strong>Second</strong>...
+    </div>
+
+Let's say we want to set a selection to "Beeblebrox the Second.":
+
+    <script>
+    var quote = document.getElementById("quote")
+    var string = "Beeblebrox the Second."
+    var startIndex = quote.textContent.indexOf(string)
+    quote.select(startIndex, startIndex + string.length)
+    </script>
+
+How would you do that without `select` method?
+
+## [Tests](http://nv.github.com/select-text.js/test/)
+Works well in Google Chrome 6.0.447.0, Safari 5.0, and Opera 10.54. A little buggy in Firefox 3.6.6.

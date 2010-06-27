@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Element.select and Text.select</title>
+	<link rel="stylesheet" href="QUnit/qunit/qunit.css">
+	<script src="../element_select.js"></script>
+	<script src="../text_select.js"></script>
+	<script src="commonjs_adapter.js"></script>
+	<script src="QUnit/qunit/qunit.js"></script>
+</head>
+<body id="qunit-suite">
+	<h1 id="qunit-header">Element.select and Text.select</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	<div id="just_text">Just text.</div>
+	<div id="text_within_element"><span>Text within an Element</span></div>
+	<div id="text_before_element">Text before <span>an Element</span></div>
+	<div id="element_before_text"><span>Some Element</span> before the text</div>
+	<div id="two_elements">Some words are <b>bold</b> and some <i>Italic</i>.</div>
+	<blockquote id="quote">
+		I'm <em>Zaphod Beeblebrox</em>, my father was <em>Zaphod Beeblebrox</em> the <strong>Second</strong>...
+	</blockquote>
+	<script src="text_select_test.js"></script>
+	<script src="element_select_test.js"></script>
+</body></html>
