@@ -38,9 +38,9 @@ Element.prototype.select = function select(start, end) {
 	}
 
 	var endNode;
-	if (node.nodeType === 1) {
+	if (node.firstChild) {
 		endNode = node.firstChild;
-		while (endNode.nodeType === 1) {
+		while (endNode.firstChild) {
 			endNode = endNode.firstChild;
 		}
 	} else {
