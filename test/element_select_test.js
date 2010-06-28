@@ -2,6 +2,15 @@ var selection = getSelection();
 
 
 module("Element");
+
+var empty = document.getElementById("empty");
+test("Empty element", function(){
+	empty.select(0, 0);
+	console.info(empty.previousSibling);
+	equals(selection.anchorNode, empty.previousSibling);
+});
+
+
 var just_text = document.getElementById("just_text");
 
 test("Text: first character", function(){
