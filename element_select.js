@@ -1,6 +1,6 @@
 /**
  * @param {Number} [start=0] >= 0
- * @param {Number} [end=element.length] >= 0
+ * @param {Number} [end=start] >= 0
  * @see http://github.com/NV/select-text.js
  */
 Element.prototype.select = function select(start, end)
@@ -8,7 +8,7 @@ Element.prototype.select = function select(start, end)
     start = start || 0;
 
     if (arguments.length < 2)
-        end = this.textContent.length;
+        end = start;
     else
         end = Math.min(end, this.textContent.length);
 
