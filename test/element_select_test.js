@@ -6,7 +6,6 @@ module("Element");
 var empty = document.getElementById("empty");
 test("Empty element", function(){
 	empty.select(0, 0);
-	console.info(empty.previousSibling);
 	equals(selection.anchorNode, empty.previousSibling);
 });
 
@@ -93,6 +92,22 @@ test("An element before the text: few characters", function(){
 	element_before_text.select(5, 19);
 	equals(selection.toString(), "Element before");
 });
+
+function buildTwoTextNodes(){
+	var element = document.createElement("div");
+	element.appendChild(document.createTextNode("First "));
+	element.appendChild(document.createTextNode("Second"));
+	document.body.appendChild(element);
+	return element;
+}
+
+test("Two text nodes", function(){
+	var two_text_nodes = buildTwoTextNodes();
+	two_text_nodes.select(0, 7);
+	equals(selection.toString(), "First S");
+	two_text_nodes.select(4, 12);
+	equals(selection.toString(), "t Second");
+})
 
 test("Two elements", function(){
 	var two_elements = document.getElementById("two_elements");
